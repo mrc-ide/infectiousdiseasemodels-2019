@@ -17,5 +17,4 @@ beta <- R0*(sigma+b)      # transmission parameter
 sigma <- user(2)          # recovery rate (1/mean duration infectiousness)
 R0 <- user(5)             # av num new cases caused by single infectious case
 b <- user(0.02)           # death rate (average life expectancy of 1 year or 52 weeks) = 1/52
-Births <- user(20000)     # number of births (for a constant population size), 
-                          
+Births <- b*N             # number of births (for a constant population size)
