@@ -1,6 +1,6 @@
-deriv(W)<-((deltaH0 + deltaHinfinity * CHi * ABR * L)/(1 + CHi * ABR * L)) * ABR * L - (sigmaW + muH) * W
-deriv(M)<-((1/2) * phi * F) * W - (sigmaM + muH) * M
-deriv(L)<-(deltaV0/(1 + CV0 * M)) * beta * M - (sigmaL + muV + alphaV0 * M + (aH/g)) * L
+deriv(W) <- ((deltaH0 + deltaHinfinity * CHi * ABR * L)/(1 + CHi * ABR * L)) * ABR * L - (sigmaW + muH) * W
+deriv(M) <- ((1/2) * phi * F) * W - (sigmaM + muH) * M
+deriv(L) <- (deltaV0/(1 + CV0 * M)) * beta * M - (sigmaL + muV + alphaV0 * M + (aH/g)) * L
 
 initial(W) <- 10
 initial(M) <- 0
