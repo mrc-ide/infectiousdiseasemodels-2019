@@ -1,1 +1,1 @@
-odin.ui:::odin_fit("SDC.R")
+odin.ui:::odin_fit("model.R")
