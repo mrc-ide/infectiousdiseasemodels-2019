@@ -2,4 +2,4 @@ packages:
   - odin.ui
 package_sources:
   github:
-  - mrc-ide/odin.ui
+  - mrc-ide/odin.ui@redraw
