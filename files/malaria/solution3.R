@@ -20,14 +20,14 @@ EIR <- (V / H) *a* (Yv / (Xv+Yv))
 Y_delay <- delay(Yh / H, tau)
 X_delay <- delay(Xv, tau)
 
-a <- 0.33
-bh <- 0.2
-r <- 0.02
-bv <- 0.05
-uv <- 0.1
-gamma <- 0.0833
+a <- user(0.33)
+bh <- user(0.2)
+r <- user(0.02)
+bv <- user(0.05)
+uv <- user(0.1)
+gamma <- user(0.0833)
 tau <- user(12)
-p <- 0.9
+p <- user(0.9)
 
 hostprev <- 100 * Yh / H
 vectorprev <- 100 * Yv / (Xv+Yv+Iv)
