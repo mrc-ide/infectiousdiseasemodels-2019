@@ -1,1 +1,1 @@
-odin.ui:::odin_fit()
+odin.ui:::odin_fit("model.R")
