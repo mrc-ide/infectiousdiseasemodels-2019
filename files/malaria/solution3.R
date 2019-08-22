@@ -7,11 +7,11 @@ initial(Iv) <- 0
 deriv(Xh) <- -(V / H) * a * bh * (Yv / V) * Xh + r * Yh
 deriv(Yh) <- (V / H) * a * bh * (Yv / V) * Xh - r * Yh
 deriv(Xv) <- uv * V-a * bv * (Yh / H) * Xv-uv * Xv
-deriv(Iv) <- a * bv * (Yh / H) * Xv-a * bv * (Y_delay) * (X_delay) * exp(-uv * tau)-uv * Iv
+deriv(Iv) <- a * bv * (Yh / H) * Xv-a * bv * (Y_delay) * (X_delay) * exp(-uv * tau) - uv * Iv
 deriv(Yv) <- a * bv * (Y_delay) * (X_delay) * exp(-uv * tau)-uv * Yv
 
-H <- Xh+Yh
-V <- Xv+Iv+Yv
+H <- Xh + Yh
+V <- Xv + Iv + Yv
 
 Ro <- (V / H) *(a^2) * bv * bh * (1 / r) * (1 / uv) * (p^tau)
 C <- (V / H) *(a^2) * bv * bh / (uv)
@@ -30,7 +30,7 @@ tau <- user(12)
 p <- user(0.9)
 
 hostprev <- 100 * Yh / H
-vectorprev <- 100 * Yv / (Xv+Yv+Iv)
+vectorprev <- 100 * Yv / (Xv + Yv + Iv)
 
 output(hostprev) <- hostprev
 output(vectorprev) <- vectorprev
