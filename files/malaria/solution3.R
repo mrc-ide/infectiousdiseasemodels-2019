@@ -6,16 +6,16 @@ initial(Iv) <- 0
 
 deriv(Xh) <- -(V / H) * a * bh * (Yv / V) * Xh + r * Yh
 deriv(Yh) <- (V / H) * a * bh * (Yv / V) * Xh - r * Yh
-deriv(Xv) <- uv * V-a * bv * (Yh / H) * Xv-uv * Xv
-deriv(Iv) <- a * bv * (Yh / H) * Xv-a * bv * (Y_delay) * (X_delay) * exp(-uv * tau) - uv * Iv
+deriv(Xv) <- uv * V - a * bv * (Yh / H) * Xv - uv * Xv
+deriv(Iv) <- a * bv * (Yh / H) * Xv - a * bv * (Y_delay) * (X_delay) * exp(-uv * tau) - uv * Iv
 deriv(Yv) <- a * bv * (Y_delay) * (X_delay) * exp(-uv * tau)-uv * Yv
 
 H <- Xh + Yh
 V <- Xv + Iv + Yv
 
-Ro <- (V / H) *(a^2) * bv * bh * (1 / r) * (1 / uv) * (p^tau)
-C <- (V / H) *(a^2) * bv * bh / (uv)
-EIR <- (V / H) *a* (Yv / (Xv+Yv))
+Ro <- (V / H) * (a^2) * bv * bh * (1 / r) * (1 / uv) * (p^tau)
+C <- (V / H) * (a^2) * bv * bh / (uv)
+EIR <- (V / H) * a * (Yv / (Xv + Yv))
 
 Y_delay <- delay(Yh / H, tau)
 X_delay <- delay(Xv, tau)
