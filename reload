@@ -49,16 +49,16 @@ die <- function(msg) {
 }
 
 
-prepare_lib <- function(root) {
-  if (file.exists(file.path(root, ".lib"))) {
+prepare <- function(root, file) {
+  if (file.exists(file.path(root, file))) {
     paths <- dirname(list.files(root, recursive = TRUE, pattern = "^app.R$"))
     n <- lengths(strsplit(paths, "/"))
     for (p in paths) {
       n <- length(strsplit(p, "/")[[1]])
-      from <- file.path(paste(rep("..", n), collapse = "/"), ".lib")
-      to <- file.path(root, p, ".lib")
+      from <- file.path(paste(rep("..", n), collapse = "/"), file)
+      to <- file.path(root, p, file)
       if (!file.exists(to)) {
-        message("Creating library for ", p)
+        message(sprintf("Creating %s for %s", file, p))
         file.symlink(from, to)
       }
     }
@@ -75,7 +75,8 @@ main <- function(args = commandArgs(TRUE), root = find_root()) {
     clear(root)
   } else {
     reload(root)
-    prepare_lib(root)
+    prepare(root, ".lib")
+    prepare(root, ".Renviron")
   }
 }
 
