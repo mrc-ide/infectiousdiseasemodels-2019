@@ -1,4 +1,5 @@
 Sys.setenv(
   "ODIN_UI_ROOT" = "odin.ui:infectiousdiseasemodels2019",
-  "REDIS_URL" = "redis://redis:6379")
+  "REDIS_URL" = "redis://redis:6379",
+  "TZ" = "Europe/London")
 odin.ui:::odin_basic()
