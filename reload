@@ -66,6 +66,17 @@ prepare <- function(root, file) {
 }
 
 
+staff_pages <- function(root) {
+  files <- c("week1.html", "week2.html")
+  message("Writing staff pages")
+  for (f in files) {
+    txt <- readLines(file.path(root, f))
+    writeLines(txt[!grepl("static/after.js", fixed = TRUE)],
+               file.path(root, sub(".html$", "-staff.html", f)))
+  }
+}
+
+
 main <- function(args = commandArgs(TRUE), root = find_root()) {
   opts <- tryCatch(
     parse_args(args),
@@ -77,6 +88,7 @@ main <- function(args = commandArgs(TRUE), root = find_root()) {
     reload(root)
     prepare(root, ".lib")
     prepare(root, ".Renviron")
+    staff_pages(root)
   }
 }
 
