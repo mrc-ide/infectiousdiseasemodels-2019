@@ -6,6 +6,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="static/after.js"></script>
+    <script src="static/collapse.js"></script>
+    <link rel="stylesheet" href="static/collapse.css"/>
 
     <link rel="stylesheet" href="static/style.min.css"/>
 </head>
@@ -30,7 +32,8 @@
       </div>
 
       <div class="show-after" data-after="2019/1/1">
-        <p>Solutions</p>
+        <button class="collapsible">Solutions (click to expand)</button>
+        <div class="content">
         <ol>
           <li><a href="files/introduction/exponential.R">
               Exponential growth</a></li>
@@ -43,6 +46,7 @@
           <li><a href="files/introduction/seirs.R">
               SEIRS</a></li>
         </ol>
+        </div>
       </div>
 
       <h2>Thursday</h2>
