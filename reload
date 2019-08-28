@@ -71,7 +71,7 @@ staff_pages <- function(root) {
   message("Writing staff pages")
   for (f in files) {
     txt <- readLines(file.path(root, f))
-    writeLines(txt[!grepl("static/after.js", fixed = TRUE)],
+    writeLines(txt[!grepl("static/after.js", txt, fixed = TRUE)],
                file.path(root, sub(".html$", "-staff.html", f)))
   }
 }
