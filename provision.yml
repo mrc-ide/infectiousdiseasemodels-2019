@@ -3,5 +3,5 @@ packages:
   - remotesave
 package_sources:
   github:
-  - mrc-ide/odin.ui
+  - mrc-ide/odin.ui@flexible-time
   - mrc-ide/remotesave@prototype
