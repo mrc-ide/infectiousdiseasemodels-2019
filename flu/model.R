@@ -11,9 +11,9 @@ deriv(I) <- gamma * E - sigma * I
 deriv(R) <- sigma * I
 
 # parameter values
-R_0 <- user(1.5)
-L <- user(1)
-D <- user(1)
+R_0 <- user(1.5, min = 0)
+L <- user(1, min = 0)
+D <- user(1, min = 0)
 I_0 <- 1 # default value
 N <- 370
 

@@ -11,10 +11,10 @@ deriv(I) <- gamma * E - sigma * I
 deriv(R) <- sigma * I
 
 # parameter values
-R_0 <- user(1.5)
-R_0_closure <- user(1.5)
-L <- user(1)
-D <- user(1)
+R_0 <- user(1.5, min = 0)
+R_0_closure <- user(1.5, min = 0)
+L <- user(1, min = 0)
+D <- user(1, min = 0)
 I_0 <- 1 
 N <- 370
 
@@ -24,5 +24,5 @@ sigma <- 1 / D
 beta <- if (t > 18 && t < 25) R_0_closure * sigma else R_0 * sigma
 
 #Output
-output(onset) <- if(t == 0) I_0 else gamma*E
+output(onset) <- if (t == 0) I_0 else gamma * E
 
