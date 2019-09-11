@@ -1,21 +1,22 @@
 # variables
-deriv(S) <- Births - beta * S * I / N + delta * R - b * S
+deriv(S) <- Births - b * S - beta * S * I / N + delta * R 
 deriv(E) <- beta * S * I / N - (b + gamma) * E
-deriv(I) <- gamma * E - (b + alpha + sigma) * I
+deriv(I) <- gamma * E - (b + sigma + alpha) * I
 deriv(R) <- sigma * I - (b + delta) * R
 
-# intitial conditions of the variables
+# initial conditions of the variables
 initial(S) <- N0 - I0
 initial(E) <- 0
 initial(I) <- I0
 initial(R) <- 0
 
 N <- S + E + I + R
+output(pop) <- N
 
 # parameter values
 N0 <- user(1e7)           # total population size
 I0 <- user(1)             # num infectious cases at start of epidemic
-sigma <- user(1)         # recovery rate (1/mean duration infectiousness)
+sigma <- user(1)          # recovery rate (1/mean duration infectiousness)
 gamma <- user(1)
 alpha <- user(0)
 delta <- user(0)          # waning antibody rate

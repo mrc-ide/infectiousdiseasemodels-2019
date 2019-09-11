@@ -1,7 +1,7 @@
 # variables
 deriv(N) <- a * N
 
-# intitial conditions of the variables
+# initial conditions of the variables
 initial(N) <- N0
 
 # parameter values

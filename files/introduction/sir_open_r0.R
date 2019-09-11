@@ -3,7 +3,7 @@ deriv(S) <- Births - b*S - beta * S * I / N
 deriv(I) <- beta * S * I / N - (b+sigma) * I
 deriv(R) <- sigma * I - b*R 
 
-# intitial conditions of the variables
+# initial conditions of the variables
 initial(S) <- N - I0
 initial(I) <- I0
 initial(R) <- 0
